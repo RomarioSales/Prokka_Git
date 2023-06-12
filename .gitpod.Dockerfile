@@ -10,7 +10,7 @@ RUN echo 'debconf debconf/frontend select Noninteractive' | sudo debconf-set-sel
 
 RUN sudo apt-get update -y \
   && sudo DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata \ 
-  && sudo apt-get install -y fastqc roary bedtools cd-hit ncbi-blast+ mcl parallel cpanminus prank mafft fasttree
+  && sudo apt-get install -y prokka roary cd-hit ncbi-blast+ mcl parallel cpanminus prank mafft fasttree
 
   
-CMD ["roary", "fastqc", "bedtools", "cd-hit", "ncbi-blast+", "mcl", "parallel", "cpanminus", "prank", "mafft", "fasttree"]
+CMD ["roary", "prokka", "cd-hit", "ncbi-blast+", "mcl", "parallel", "cpanminus", "prank", "mafft", "fasttree"]
